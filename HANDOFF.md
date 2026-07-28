@@ -32,9 +32,9 @@ upload the private design workspace or reintroduce `index-test.html` as a public
 | `homepage.css` | Homepage-specific approved styling. |
 | `styles.css` | Shared site styles. |
 | `app.js` | Shared navigation, motion, footer, and contact behavior. |
-| `work.html` | Products and selected work. |
+| `work.html` | Plants in Pocket and Fintley. |
 | `services.html` | Software and technology-integration services. |
-| `contact.html` | Contact page using the visitor's email application. |
+| `contact.html` | Direct email contact page without form fields. |
 | `privacy.html` | Privacy notice. |
 | `assets/` | Approved brand and product artwork. |
 | `CNAME` | GitHub Pages custom-domain configuration. |
@@ -43,6 +43,7 @@ upload the private design workspace or reintroduce `index-test.html` as a public
 
 ## Release checks
 
+- Keep the public portfolio limited to Plants in Pocket and Fintley until the owner requests otherwise.
 - Verify the homepage at desktop and mobile sizes.
 - Verify Work, Services, Contact, and Privacy navigation.
 - Verify product images, wordmarks, favicon, and social-card assets.

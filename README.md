@@ -10,7 +10,9 @@ The owner approved the current homepage on July 28, 2026.
 - `index.html` is the canonical production homepage.
 - `homepage.css` contains the approved homepage-specific styling.
 - `styles.css` and `app.js` provide the shared site system.
-- `work.html`, `services.html`, `contact.html`, and `privacy.html` are the supporting pages.
+- `work.html` features Plants in Pocket and Fintley.
+- `contact.html` provides one direct email path without presenting a non-submitting web form.
+- `services.html` and `privacy.html` provide the remaining supporting pages.
 - `assets/` contains the approved brand and product artwork.
 
 The approved homepage originated as `GPT Design/index-test.html` in the private local design
