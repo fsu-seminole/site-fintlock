@@ -3,11 +3,13 @@
 Run: python3 build.py  (writes *.html next to this file)."""
 
 import pathlib
+import re
+from service_pages import PAGES as SERVICE_PAGES
 
 ROOT = pathlib.Path(__file__).parent
 SITE = "https://fintlock.com"
 EMAIL = "contact@fintlock.com"
-CSS_V = "3"
+CSS_V = "4"
 JS_V = "3"
 
 ARROW = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
@@ -89,6 +91,9 @@ def footer(current):
         <nav class="footer-nav" aria-label="Footer">
           {"".join(links)}
         </nav>
+        <nav class="footer-nav" aria-label="Services">
+          {"".join(f'<a href="{p["slug"]}"{" aria-current=page" if p["slug"] == current else ""}>{p["short"]}</a>' for p in SERVICE_PAGES)}
+        </nav>
         <div class="footer-meta">
           <a href="mailto:{EMAIL}">{EMAIL}</a>
           <span>Tampa, Florida</span>
@@ -126,6 +131,8 @@ def cta(heading="Tell us what needs to work better.", sub="A few sentences about
 """
 
 
+SERVICE_LINKS = ["iphone-app-development.html", "custom-business-software.html", "web-app-development.html", "custom-business-software.html#integration"]
+
 SERVICES = [
     ("01", "iPhone apps", "Native, start to finish",
      "Product planning, interface design, native Swift development, testing, and App Store submission. We build the whole app, not a wrapper around a website.",
@@ -151,12 +158,14 @@ def service_rows(long=False):
     for i, (num, name, sub, desc, detail, tags) in enumerate(SERVICES):
         tag_html = "".join(f"<li>{t}</li>" for t in tags)
         more = f'<p class="service-detail">{detail}</p>' if long else ""
+        link = SERVICE_LINKS[i]
+        link_html = f'<a class="text-link" href="{link}" style="margin-top:18px">About {name.lower() if i else "iPhone apps"} {ARROW}</a>' if long and i < 3 else ""
         out.append(f"""
         <article class="service-row" data-reveal style="--delay:{i * 60}ms">
           <span class="service-num">{num}</span>
           <h3>{name}<small>{sub}</small></h3>
           <div>
-            <p>{desc}</p>{more}
+            <p>{desc}</p>{more}{link_html}
             <ul aria-label="Typical work">{tag_html}</ul>
           </div>
         </article>""")
@@ -658,12 +667,153 @@ NOT_FOUND = f"""
     </section>
 """
 
+def service_page(p):
+    def ul(items):
+        return "".join(f"<li>{i}</li>" for i in items)
+    facts = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in p["example"][3])
+    faq = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in p["faq"])
+    by_slug = {x["slug"]: x for x in SERVICE_PAGES}
+    related = "".join(
+        f'<a href="{s}"><span class="num">0{i+1}</span><span><strong>{by_slug[s]["label"]}</strong><small>{by_slug[s]["blurb"]}</small></span>{ARROW}</a>'
+        for i, s in enumerate(p["related"]))
+    ex_href, ex_text = p["example"][4]
+    return f"""
+    <section class="page-intro">
+      <div class="wrap page-intro-grid">
+        <div>
+          <p class="label">{p["label"]} / Tampa, Florida</p>
+          <h1>{p["h1"]}</h1>
+        </div>
+        <p>{p["lead"]}</p>
+      </div>
+    </section>
+
+    <section class="section-tight" style="border-top:1px solid var(--line)">
+      <div class="wrap statement">
+        <div data-reveal>
+          <p class="label">The problem</p>
+          <p class="display" style="margin-top:22px">{p["problem"][0]}</p>
+        </div>
+        <div class="statement-aside" data-reveal style="--delay:100ms">
+          {"".join(f"<p>{x}</p>" for x in p["problem"][1])}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" style="border-top:1px solid var(--line)">
+      <div class="wrap two-col">
+        <div data-reveal>
+          <p class="label">What we build</p>
+          <h2 style="margin-top:20px;font-size:clamp(1.9rem,3vw,2.6rem)">{p["build"][0]}</h2>
+          <p class="muted" style="margin-top:18px">{p["build"][1]}</p>
+          <ul class="bullets">{ul(p["build"][2])}</ul>
+        </div>
+        <aside class="fit-panel" data-reveal style="--delay:100ms">
+          <p class="label">{p["fit"][0]}</p>
+          <ul class="bullets">{ul(p["fit"][1])}</ul>
+          <a class="btn btn-primary" href="contact.html" style="margin-top:24px">Start a project {ARROW}</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--line)">
+      <div class="wrap case" style="border-top:0;padding-block:0">
+        <div class="case-copy" data-reveal>
+          <p class="label">{p["example"][0]}</p>
+          <h2 style="font-size:clamp(2rem,3.6vw,3.2rem)">{p["example"][1]}</h2>
+          {"".join(f'<p{" class=lead" if i == 0 else ""}>{x}</p>' for i, x in enumerate(p["example"][2]))}
+          <dl class="facts">{facts}</dl>
+          <div class="actions"><a class="text-link" href="{ex_href}">{ex_text} {ARROW}</a></div>
+        </div>
+        <div class="case-media" data-reveal style="--delay:120ms">
+          {example_media(p["slug"])}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--line)">
+      <div class="wrap">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="label">How a project runs</p>
+            <h2>Three stages, each with something to show for it.</h2>
+          </div>
+          <p data-reveal style="--delay:100ms">A written scope and a price before work starts, working builds while we build, and a proper handover when it ships. <a href="services.html" style="color:var(--ink);border-bottom:1px solid var(--line-3)">More on how we work</a>.</p>
+        </div>
+        {PROCESS}
+      </div>
+    </section>
+
+    <section class="section-tight" style="border-top:1px solid var(--line)">
+      <div class="wrap">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="label">Questions</p>
+            <h2>Things people ask about {p["topic"]}.</h2>
+          </div>
+        </div>
+        <div class="faq" data-reveal>{faq}</div>
+      </div>
+    </section>
+
+    <section class="section-tight" style="border-top:1px solid var(--line)">
+      <div class="wrap">
+        <p class="label" data-reveal>Related services</p>
+        <nav class="product-index product-index-3" aria-label="Related services" data-reveal style="--delay:80ms">{related}</nav>
+      </div>
+    </section>
+
+{cta("Tell us what needs to work better.", "A few sentences about the problem, who deals with it, and what you would like to change is enough to start. We reply within one business day.")}
+"""
+
+
+def example_media(slug):
+    if slug in ("iphone-app-development.html", "web-app-development.html"):
+        shots = [("fintley-home-dark", "Home", "Fintley home screen with a search field, recent reports, and featured markets"),
+                 ("fintley-forecast-dark", "Appraisal", "Fintley appraisal with a value range, cap rate, rent, and cash flow"),
+                 ("fintley-deal-lab-dark", "Deal Lab", "Fintley Deal Lab with adjustable assumptions and monthly cash flow")]
+        if slug == "web-app-development.html":
+            shots = [("fintley-markets-dark", "Markets", "Fintley markets screen ranking US property markets"),
+                     ("fintley-watchlist-dark", "Watchlist", "Fintley watchlist with tracked value and saved properties"),
+                     ("fintley-report-dark", "Forecast", "Fintley report with a Forecast score gauge")]
+        figs = ""
+        for n, cap, alt in shots:
+            small, w, h = ("-480", 480, 1043) if n != "fintley-report-dark" else ("-320", 320, 696)
+            full_w, full_h = (720, 1565) if n != "fintley-report-dark" else (460, 1000)
+            figs += f'<figure><figcaption>{cap}</figcaption><img src="assets/screens/{n}.webp" srcset="assets/screens/{n}{small}.webp {w}w, assets/screens/{n}.webp {full_w}w" sizes="(max-width: 640px) 62vw, 30vw" alt="{alt}" width="{full_w}" height="{full_h}" loading="lazy" decoding="async"></figure>'
+        return f'<div class="screens" aria-label="Fintley screens">{figs}</div>'
+    if slug == "custom-app-development.html":
+        return """<div class="plants-panel">
+              <img src="assets/work/plants-primary-logo.webp" alt="Plants in Pocket logo: a potted plant beside the name" width="430" height="243" loading="lazy" decoding="async">
+              <div class="plants-steps" aria-hidden="true"><span>Identify</span><span>Check health</span><span>Care plan</span></div>
+            </div>"""
+    # custom-business-software: an abstract spec-check panel drawn in HTML, no invented screenshots
+    rows = [("Requirement", "Product data", "Match"),
+            ("R-value 19, unfaced", "R-19 unfaced batt, 15 in", "ok"),
+            ("Fire rating: Class A", "Class A (ASTM E84)", "ok"),
+            ("Width: 16 in on center", "15 in batt", "flag"),
+            ("Thickness: 6.25 in", "6.25 in", "ok")]
+    body = ""
+    for i, (a, b, c) in enumerate(rows):
+        if i == 0:
+            body += f'<div class="spec-row spec-head"><span>{a}</span><span>{b}</span><span>{c}</span></div>'
+        else:
+            mark = '<i class="ok">Matches</i>' if c == "ok" else '<i class="flag">Check</i>'
+            body += f'<div class="spec-row"><span>{a}</span><span>{b}</span><span>{mark}</span></div>'
+    return f"""<div class="spec-panel" aria-label="Illustration of a specification check">
+              <div class="spec-bar"><span>Spec check</span><span>Illustration, not client data</span></div>
+              {body}
+              <div class="spec-foot"><span>1 item to check</span><span>Export record</span></div>
+            </div>"""
+
+
 PAGES = {
     "index.html": ("Custom Software and iPhone App Development, Tampa | Fintlock", "Fintlock is a software studio in Tampa, Florida. We design and build native iPhone apps, desktop tools, and web software for businesses with specific needs.", HOME, "iPhone apps and business software, made to fit. A software studio in Tampa, Florida."),
     "work.html": ("Our Work: Fintley and Plants in Pocket | Fintlock", "Two iPhone apps designed and built by Fintlock: Fintley, a real estate appraisal app, and Plants in Pocket, a plant identification and care app.", WORK, None),
     "services.html": ("iPhone App, Desktop and Web Software Development | Fintlock", "iPhone apps, desktop and internal software, web products and integrations, and practical AI and automation help, with a written scope and price before work starts.", SERVICES_PAGE, None),
     "contact.html": ("Start a Software Project | Fintlock", "Tell Fintlock what needs to work better. A few sentences is enough to start, and we reply within one business day.", CONTACT, None),
     "404.html": ("Page Not Found | Fintlock", "That page is not on fintlock.com.", NOT_FOUND, None),
+    **{p["slug"]: (p["title"], p["description"], service_page(p), None) for p in SERVICE_PAGES},
     "privacy.html": ("Privacy Notice | Fintlock", "What fintlock.com collects, what it does not, and how the contact form works. Plain terms, minimal collection.", PRIVACY, None),
 }
 
@@ -689,12 +839,23 @@ for path, (title, desc, body, og) in PAGES.items():
         html = html.replace("</head>", JSONLD + "</head>")
     if path == "work.html":
         html = html.replace("</head>", WORK_JSONLD + "</head>")
+    sp = next((p for p in SERVICE_PAGES if p["slug"] == path), None)
+    if sp:
+        import json as _json
+        ld = {"@context": "https://schema.org", "@type": "Service", "name": sp["schema_name"], "serviceType": sp["schema_name"],
+              "description": sp["description"], "url": SITE + "/" + path, "areaServed": "US",
+              "provider": {"@type": "Organization", "@id": SITE + "/#org", "name": "Fintlock", "url": SITE + "/"}}
+        html = html.replace("</head>", '  <script type="application/ld+json">' + _json.dumps(ld) + "</script>\n</head>")
     html += header(path) + body + footer(path)
     (ROOT / path).write_text(html, encoding="utf-8")
     print("wrote", path, len(html))
 
 nf = ROOT / "404.html"
-nf.write_text(nf.read_text().replace('<link rel="canonical" href="https://fintlock.com/404.html">', '<meta name="robots" content="noindex">').replace('href="assets/', 'href="/assets/').replace('src="assets/', 'src="/assets/').replace('href="styles.css', 'href="/styles.css').replace('src="app.js', 'src="/app.js').replace('href="index.html"', 'href="/"').replace('href="work.html"', 'href="/work.html"').replace('href="services.html"', 'href="/services.html"').replace('href="contact.html"', 'href="/contact.html"').replace('href="privacy.html"', 'href="/privacy.html"'), encoding="utf-8")
+_h = nf.read_text()
+_h = _h.replace('<link rel="canonical" href="https://fintlock.com/404.html">', '<meta name="robots" content="noindex">')
+_h = re.sub(r'(href|src)="(assets/|styles\.css|app\.js)', r'\1="/\2', _h)
+_h = re.sub(r'href="([a-z0-9-]+)\.html([#"])', lambda m: 'href="/' + ('' if m.group(1) == 'index' else m.group(1) + '.html') + m.group(2), _h)
+nf.write_text(_h, encoding="utf-8")
 
 sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for path in PAGES:
