@@ -7,8 +7,8 @@ import pathlib
 ROOT = pathlib.Path(__file__).parent
 SITE = "https://fintlock.com"
 EMAIL = "contact@fintlock.com"
-CSS_V = "1"
-JS_V = "1"
+CSS_V = "2"
+JS_V = "2"
 
 ARROW = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 EXT = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3h7v7M13 3 5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
@@ -38,7 +38,9 @@ def head(title, description, path, og_description=None):
   <link rel="icon" type="image/svg+xml" href="assets/brand/fintlock-favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css?v={CSS_V}">
 </head>
 <body>
@@ -212,9 +214,9 @@ HOME = f"""
           <a class="stage" href="work.html#fintley" aria-label="Fintley, a native iPhone app built by Fintlock">
             <div class="stage-caption"><span>Built by Fintlock</span><strong>Fintley / Native iPhone</strong></div>
             <div class="device-fan" aria-hidden="true">
-              <div class="device device-2"><img src="assets/screens/fintley-forecast-dark.webp" alt="" width="720" height="1565" decoding="async"></div>
-              <div class="device device-1"><img src="assets/screens/fintley-home-dark.webp" alt="" width="720" height="1565" decoding="async" fetchpriority="high"></div>
-              <div class="device device-3"><img src="assets/screens/fintley-deal-lab-dark.webp" alt="" width="720" height="1565" decoding="async"></div>
+              <div class="device device-2"><img src="assets/screens/fintley-forecast-dark-480.webp" srcset="assets/screens/fintley-forecast-dark-480.webp 480w, assets/screens/fintley-forecast-dark.webp 720w" sizes="(max-width: 640px) 160px, 232px" alt="" width="480" height="1043" decoding="async"></div>
+              <div class="device device-1"><img src="assets/screens/fintley-home-dark-480.webp" srcset="assets/screens/fintley-home-dark-480.webp 480w, assets/screens/fintley-home-dark.webp 720w" sizes="(max-width: 640px) 160px, 232px" alt="" width="480" height="1043" decoding="async" fetchpriority="high"></div>
+              <div class="device device-3"><img src="assets/screens/fintley-deal-lab-dark-480.webp" srcset="assets/screens/fintley-deal-lab-dark-480.webp 480w, assets/screens/fintley-deal-lab-dark.webp 720w" sizes="(max-width: 640px) 160px, 232px" alt="" width="480" height="1043" decoding="async"></div>
             </div>
           </a>
         </div>
@@ -250,7 +252,7 @@ HOME = f"""
               <div><dt>Website</dt><dd>fintley.app</dd></div>
             </dl>
             <div class="actions">
-              <a class="text-link" href="work.html#fintley">Read more {ARROW}</a>
+              <a class="text-link" href="work.html#fintley">More about Fintley {ARROW}</a>
               <a class="text-link" href="https://fintley.app" rel="noopener">fintley.app {EXT}</a>
             </div>
           </div>
@@ -274,7 +276,7 @@ HOME = f"""
               <div><dt>Status</dt><dd>Launching 2026</dd></div>
             </dl>
             <div class="actions">
-              <a class="text-link" href="work.html#plants-in-pocket">Read more {ARROW}</a>
+              <a class="text-link" href="work.html#plants-in-pocket">More about Plants in Pocket {ARROW}</a>
               <a class="text-link" href="https://www.tiktok.com/@plantsinpocket" rel="noopener">@plantsinpocket {EXT}</a>
             </div>
           </div>
