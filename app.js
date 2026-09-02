@@ -14,7 +14,7 @@
       var scrolled = window.scrollY > 8;
       headers.forEach(function (h) { h.classList.toggle("is-scrolled", scrolled); });
     };
-    setScrolled();
+    window.requestAnimationFrame(setScrolled);
     window.addEventListener("scroll", setScrolled, { passive: true });
   }
 
