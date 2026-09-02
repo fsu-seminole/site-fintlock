@@ -3,82 +3,194 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services | Fintlock</title>
-  <meta name="description" content="Fintlock designs and builds iPhone apps, desktop programs, internal tools, and focused web software.">
+  <title>iPhone App, Desktop and Web Software Development | Fintlock</title>
+  <meta name="description" content="iPhone apps, desktop and internal software, web products and integrations, and practical AI and automation help, with a written scope and price before work starts.">
   <link rel="canonical" href="https://fintlock.com/services.html">
-  <meta property="og:title" content="Services | Fintlock">
-  <meta property="og:description" content="Custom apps and software built around the way your company works.">
+  <meta property="og:site_name" content="Fintlock">
+  <meta property="og:title" content="iPhone App, Desktop and Web Software Development | Fintlock">
+  <meta property="og:description" content="iPhone apps, desktop and internal software, web products and integrations, and practical AI and automation help, with a written scope and price before work starts.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fintlock.com/services.html">
   <meta property="og:image" content="https://fintlock.com/assets/brand/fintlock-social-card.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#071426">
+  <meta name="theme-color" content="#060c18">
   <link rel="icon" type="image/svg+xml" href="assets/brand/fintlock-favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=28">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css?v=1">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header" data-header>
     <div class="wrap header-inner">
-      <a class="brand" href="index.html" aria-label="Fintlock home"><img src="assets/brand/fintlock-wordmark-on-dark.svg" alt="Fintlock" width="121" height="31"></a>
-      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-        <a href="work.html">Work</a><a href="services.html" aria-current="page">Services</a><a href="contact.html">Contact</a>
+      <a class="brand" href="index.html" aria-label="Fintlock home">
+        <img src="assets/brand/fintlock-wordmark-on-dark.svg" alt="Fintlock" width="108" height="28">
+      </a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <a href="work.html">Work</a><a href="services.html" aria-current="page">Services</a><a href="contact.html">Contact</a><a class="btn btn-primary btn-sm nav-cta" href="contact.html">Start a project</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
     </div>
   </header>
 
   <main id="main">
-    <section class="page-intro services-page-intro">
+
+    <section class="page-intro">
       <div class="wrap page-intro-grid">
-        <div><p class="overline">Services</p><h1>Built for your tech needs.</h1></div>
-        <p>We work directly with owners and teams to custom-fit apps and software to the way they operate.</p>
+        <div data-reveal>
+          <p class="label">Services</p>
+          <h1>What we build, and how.</h1>
+        </div>
+        <p data-reveal style="--delay:100ms">We work directly with owners and teams to fit software to the way a company already runs. Four kinds of work, all done in-house.</p>
       </div>
     </section>
 
-    <section class="service-detail-section">
-      <div class="wrap service-detail-rows">
-        <article>
-          <span class="service-number">01</span>
-          <h2>iPhone apps</h2>
-          <p>From product planning and interface design through native development and App Store launch.</p>
+    <section class="section-tight" aria-label="Services">
+      <div class="wrap">
+        <div class="service-list">
+        <article class="service-row" data-reveal style="--delay:0ms">
+          <span class="service-num">01</span>
+          <h3>iPhone apps<small>Native, start to finish</small></h3>
+          <div>
+            <p>Product planning, interface design, native Swift development, testing, and App Store submission. We build the whole app, not a wrapper around a website.</p><p class="service-detail">A typical engagement covers the whole path: sketching the flows, designing the screens, building the app in Swift, getting it through TestFlight with your own testers, and handling the App Store listing and review. If the app needs a backend, we build that too.</p>
+            <ul aria-label="Typical work"><li>SwiftUI</li><li>StoreKit</li><li>TestFlight</li><li>App Store Connect</li></ul>
+          </div>
         </article>
-        <article>
-          <span class="service-number">02</span>
-          <h2>Desktop and internal software</h2>
-          <p>Windows and Mac tools for document workflows, reporting, system connections, and specialized internal processes.</p>
+        <article class="service-row" data-reveal style="--delay:60ms">
+          <span class="service-num">02</span>
+          <h3>Desktop and internal software<small>Windows and Mac</small></h3>
+          <div>
+            <p>Tools for documents, reporting, specialized data, and the repetitive work that has outgrown a spreadsheet. Built for the handful of people who use them every day.</p><p class="service-detail">These are the tools a company runs on and nobody outside it ever sees: estimating, quoting, spec checking, document generation, and reporting that pulls three systems into one screen. We build them to run well on the hardware you already have and to be simple enough to hand to a new hire.</p>
+            <ul aria-label="Typical work"><li>Windows</li><li>macOS</li><li>Reporting</li><li>Document workflows</li></ul>
+          </div>
         </article>
-        <article>
-          <span class="service-number">03</span>
-          <h2>Web products and integrations</h2>
-          <p>Customer portals, internal tools, API integrations, and workflow automation built for the browser.</p>
+        <article class="service-row" data-reveal style="--delay:120ms">
+          <span class="service-num">03</span>
+          <h3>Web products and integrations<small>Browser software and APIs</small></h3>
+          <div>
+            <p>Customer portals, internal browser tools, and connections between the systems you already pay for, so information stops being retyped from one to the next.</p><p class="service-detail">A portal where clients can check the status of an order. An internal tool that replaces the shared spreadsheet. An integration that moves data between your accounting, CRM, and field systems without anyone copying and pasting. Built for the browser, so there is nothing to install.</p>
+            <ul aria-label="Typical work"><li>Portals</li><li>Internal tools</li><li>API integration</li><li>Automation</li></ul>
+          </div>
         </article>
+        <article class="service-row" data-reveal style="--delay:180ms">
+          <span class="service-num">04</span>
+          <h3>Technology integration<small>AI, automation, and data</small></h3>
+          <div>
+            <p>Practical help evaluating and adopting AI, automation, connected systems, and modern data tools. We have particular depth in construction and building materials.</p><p class="service-detail">New tools arrive faster than anyone can evaluate them. We help you work out which ones are worth adopting, then connect them to the way you already operate. In construction and building materials, that tends to mean quoting, supplier data, specifications, and job documentation.</p>
+            <ul aria-label="Typical work"><li>AI</li><li>Automation</li><li>Connected systems</li><li>Construction</li></ul>
+          </div>
+        </article></div>
       </div>
     </section>
 
-    <section class="builder-section">
-      <div class="wrap builder-grid">
-        <div><p class="overline overline-light">We work directly with our clients</p><h2>Tailored to your business, built within it.</h2></div>
-        <p class="builder-statement">We work with owners and teams to understand the day-to-day operation, then design and integrate software around it.</p>
+    <section class="section" aria-labelledby="process-title" style="border-top:1px solid var(--line)">
+      <div class="wrap">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="label">Process</p>
+            <h2 id="process-title">Three stages, each with something to show for it.</h2>
+          </div>
+          <p data-reveal style="--delay:100ms">You should never wonder what is happening with your project. Every stage ends with something you can hold, read, or install.</p>
+        </div>
+        
+    <div class="process" data-reveal>
+      <div>
+        <span class="step-num">1</span>
+        <h3>Scope</h3>
+        <p>We start with a conversation about what happens today and what needs to change. From that you get a written scope and a price before any code is written.</p>
+        <div class="step-out"><span>You get</span>A written scope and a fixed price</div>
+      </div>
+      <div>
+        <span class="step-num">2</span>
+        <h3>Build</h3>
+        <p>Design and development run in short cycles. You review working software as it comes together, on your own phone or desk, rather than a slide deck about it.</p>
+        <div class="step-out"><span>You get</span>Working builds to review along the way</div>
+      </div>
+      <div>
+        <span class="step-num">3</span>
+        <h3>Launch</h3>
+        <p>App Store submission, deployment, documentation, and a proper handover. When it ships, your team can run it, and we are still reachable when something needs attention.</p>
+        <div class="step-out"><span>You get</span>A shipped product and the keys to it</div>
+      </div>
+    </div>
+
       </div>
     </section>
 
-    <section class="contact-prompt">
-      <div class="wrap contact-prompt-grid">
-        <p class="overline">Contact</p>
-        <div><h2>What needs to work better?</h2><p class="contact-prompt-sub">Tell us what your team or customers are trying to do.</p></div>
-        <div><a class="email-link" href="contact.html">Start a conversation</a></div>
+    <section class="section section-tight" aria-labelledby="working-title" style="border-top:1px solid var(--line)">
+      <div class="wrap statement">
+        <div data-reveal>
+          <p class="label" id="working-title">Working with us</p>
+          <p class="display" style="margin-top:22px">Fitted to your business and built inside it, with the people who do the work in the room.</p>
+        </div>
+        <div class="statement-aside" data-reveal style="--delay:120ms">
+          <p>We start by understanding the day-to-day operation, then design and integrate software around it. That means talking to the people who will use the thing, not only the people paying for it.</p>
+          <p>Communication is direct. You have a person to email rather than a ticket queue, and you hear from us with working software, not status reports.</p>
+          <div class="stack" aria-label="Where we work">
+            <div><span>Mobile</span><span>Swift, SwiftUI</span></div>
+            <div><span>Desktop</span><span>Windows, macOS</span></div>
+            <div><span>Web</span><span>Browser apps, APIs</span></div>
+            <div><span>Integration</span><span>AI, automation, data</span></div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <section class="section" aria-labelledby="faq-title" style="border-top:1px solid var(--line)">
+      <div class="wrap">
+        <div class="section-head">
+          <div data-reveal>
+            <p class="label">Questions</p>
+            <h2 id="faq-title">Things people usually ask first.</h2>
+          </div>
+        </div>
+        <div class="faq" data-reveal><details><summary>What does a project cost?</summary><p>It depends on the scope, which is why we write the scope down first. You will have a number before any work starts, and it does not move unless the scope does.</p></details><details><summary>How long does an iPhone app take?</summary><p>A focused first version usually takes a few months from kickoff to App Store submission. Larger products take longer. After the first conversation we can tell you roughly where yours lands.</p></details><details><summary>Who owns the code?</summary><p>You do. The source code, the App Store listing, and the accounts the software runs on are set up in your name from the start.</p></details><details><summary>Do you work with companies outside Tampa?</summary><p>Yes. We are based in Tampa, Florida and work with clients across the country. Most of the collaboration happens over email, calls, and shared builds, and we are happy to meet in person when we are nearby.</p></details><details><summary>What happens after launch?</summary><p>Software needs looking after. We can stay on for updates, new features, and the yearly round of operating system changes, or hand everything over cleanly to your own team. Either way the code is documented and yours.</p></details><details><summary>Can you take over an existing app or tool?</summary><p>Often, yes. Send us what you have and we will tell you plainly whether it makes sense to continue with it or start again.</p></details></div>
+      </div>
+    </section>
+
+
+    <section class="cta">
+      <div class="wrap cta-grid">
+        <div data-reveal>
+          <p class="label">Contact</p>
+          <h2 style="margin-top:20px">What needs to work better?</h2>
+          <p>Tell us what your team or your customers are trying to do. A few sentences is enough, and we reply within one business day.</p>
+        </div>
+        <div class="cta-side" data-reveal style="--delay:120ms">
+          <a class="btn btn-primary" href="contact.html">Start a project <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="email" href="mailto:contact@fintlock.com">contact@fintlock.com</a>
+          <small>Tampa, Florida. Working with clients across the US.</small>
+        </div>
+      </div>
+    </section>
+
+
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div><a class="footer-brand" href="index.html" aria-label="Fintlock home"><img src="assets/brand/fintlock-wordmark-on-dark.svg" alt="Fintlock" width="113" height="29"></a><p>Custom software built in Tampa, FL.</p></div>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="work.html">Work</a><a href="services.html" aria-current="page">Services</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></nav>
-      <div class="footer-meta"><a href="mailto:contact@fintlock.com">contact@fintlock.com</a><span>© <span data-year>2026</span> Fintlock LLC</span></div>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="index.html" aria-label="Fintlock home"><img src="assets/brand/fintlock-wordmark-on-dark.svg" alt="Fintlock" width="100" height="26"></a>
+          <p>A software studio in Tampa, Florida. iPhone apps, desktop tools, and web software for businesses with specific needs.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="work.html">Work</a><a href="services.html" aria-current="page">Services</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a>
+        </nav>
+        <div class="footer-meta">
+          <a href="mailto:contact@fintlock.com">contact@fintlock.com</a>
+          <span>Tampa, Florida</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Fintlock LLC</span>
+        <span>Custom software, designed and built in Tampa</span>
+      </div>
     </div>
   </footer>
-  <script src="app.js?v=25" defer></script>
+
+  <script src="app.js?v=1" defer></script>
 </body>
 </html>

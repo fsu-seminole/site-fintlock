@@ -3,75 +3,129 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact | Fintlock</title>
-  <meta name="description" content="Tell Fintlock what needs to work better and start a direct conversation about your software project.">
+  <title>Start a Software Project | Fintlock</title>
+  <meta name="description" content="Tell Fintlock what needs to work better. A few sentences is enough to start, and we reply within one business day.">
   <link rel="canonical" href="https://fintlock.com/contact.html">
-  <meta property="og:title" content="Contact | Fintlock">
-  <meta property="og:description" content="A direct way to start a conversation about custom software and technology integration.">
+  <meta property="og:site_name" content="Fintlock">
+  <meta property="og:title" content="Start a Software Project | Fintlock">
+  <meta property="og:description" content="Tell Fintlock what needs to work better. A few sentences is enough to start, and we reply within one business day.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fintlock.com/contact.html">
   <meta property="og:image" content="https://fintlock.com/assets/brand/fintlock-social-card.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#071426">
+  <meta name="theme-color" content="#060c18">
   <link rel="icon" type="image/svg+xml" href="assets/brand/fintlock-favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=28">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css?v=1">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-header>
     <div class="wrap header-inner">
-      <a class="brand" href="index.html" aria-label="Fintlock home"><img src="assets/brand/fintlock-wordmark-on-dark.svg" alt="Fintlock" width="121" height="31"></a>
-      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-        <a href="work.html">Work</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html" aria-current="page">Contact</a>
+      <a class="brand" href="index.html" aria-label="Fintlock home">
+        <img src="assets/brand/fintlock-wordmark-on-dark.svg" alt="Fintlock" width="108" height="28">
+      </a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <a href="work.html">Work</a><a href="services.html">Services</a><a href="contact.html" aria-current="page">Contact</a><a class="btn btn-primary btn-sm nav-cta" href="contact.html">Start a project</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
     </div>
   </header>
 
   <main id="main">
-    <section class="page-intro contact-page-intro">
+
+    <section class="page-intro">
       <div class="wrap page-intro-grid">
-        <div>
-          <p class="overline">Contact</p>
+        <div data-reveal>
+          <p class="label">Contact</p>
           <h1>Tell us what needs to work better.</h1>
         </div>
-        <p>A few sentences about the problem, the people involved, and what you want to improve is enough to start.</p>
+        <p data-reveal style="--delay:100ms">A few sentences about the problem, the people involved, and what you would like to change is enough to start. No brief or deck required.</p>
       </div>
     </section>
 
-    <section class="contact-section">
-      <div class="wrap contact-simple">
-        <div class="contact-primary">
-          <p class="overline">Direct email</p>
-          <a class="contact-hero-email" href="mailto:contact@fintlock.com?subject=Project%20inquiry">contact@fintlock.com</a>
-          <p>We reply within one business day.</p>
+    <section class="section-tight" aria-label="Ways to reach Fintlock">
+      <div class="wrap contact-grid">
+        <div class="contact-direct" data-reveal>
+          <p class="label">Direct email</p>
+          <a class="contact-email" href="mailto:contact@fintlock.com?subject=Project%20inquiry">contact@fintlock.com</a>
+          <p>We reply within one business day, from Tampa, Florida.</p>
+          <ul class="contact-notes" aria-label="What helps us reply well">
+            <li><span>01</span><div><strong>What happens today</strong><small>The current process, even if it is a spreadsheet and a group chat.</small></div></li>
+            <li><span>02</span><div><strong>Who is involved</strong><small>The people who do the work and the people who depend on it.</small></div></li>
+            <li><span>03</span><div><strong>What you want to change</strong><small>The outcome you are after, in your own words.</small></div></li>
+          </ul>
         </div>
 
-        <aside class="contact-context" aria-labelledby="contact-context-title">
-          <p class="overline" id="contact-context-title">Helpful context</p>
-          <div class="contact-context-list">
-            <div><span>01</span><strong>What happens today</strong></div>
-            <div><span>02</span><strong>Who uses the process</strong></div>
-            <div><span>03</span><strong>What you want to improve</strong></div>
+        <form class="form" data-contact-form data-reveal style="--delay:120ms" action="mailto:contact@fintlock.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
           </div>
-          <p class="contact-context-note">No formal brief is needed. Based in Tampa, Florida.</p>
-        </aside>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-company">Company <small>optional</small></label>
+              <input id="f-company" name="company" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="f-kind">Project type</label>
+              <select id="f-kind" name="kind">
+                <option value="">Not sure yet</option>
+                <option>iPhone app</option>
+                <option>Desktop or internal software</option>
+                <option>Web product or integration</option>
+                <option>AI or automation</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-message">What needs to work better?</label>
+            <textarea id="f-message" name="message" required placeholder="What happens today, who is involved, and what you would like to change."></textarea>
+          </div>
+          <p class="honeypot" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
+          <div class="form-foot">
+            <button class="btn btn-primary" type="submit">Send the note <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <small>This opens a prepared message in your own email app. Nothing is sent or stored by this website.</small>
+          </div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div><a class="footer-brand" href="index.html" aria-label="Fintlock home"><img src="assets/brand/fintlock-wordmark-on-dark.svg" alt="Fintlock" width="113" height="29"></a><p>Custom software built in Tampa, FL.</p></div>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="work.html">Work</a><a href="services.html">Services</a><a href="contact.html" aria-current="page">Contact</a><a href="privacy.html">Privacy</a></nav>
-      <div class="footer-meta"><a href="mailto:contact@fintlock.com">contact@fintlock.com</a><span>© <span data-year>2026</span> Fintlock LLC</span></div>
-
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="index.html" aria-label="Fintlock home"><img src="assets/brand/fintlock-wordmark-on-dark.svg" alt="Fintlock" width="100" height="26"></a>
+          <p>A software studio in Tampa, Florida. iPhone apps, desktop tools, and web software for businesses with specific needs.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="work.html">Work</a><a href="services.html">Services</a><a href="contact.html" aria-current="page">Contact</a><a href="privacy.html">Privacy</a>
+        </nav>
+        <div class="footer-meta">
+          <a href="mailto:contact@fintlock.com">contact@fintlock.com</a>
+          <span>Tampa, Florida</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Fintlock LLC</span>
+        <span>Custom software, designed and built in Tampa</span>
+      </div>
     </div>
   </footer>
 
-  <script src="app.js?v=25" defer></script>
+  <script src="app.js?v=1" defer></script>
 </body>
 </html>
