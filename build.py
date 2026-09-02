@@ -7,8 +7,8 @@ import pathlib
 ROOT = pathlib.Path(__file__).parent
 SITE = "https://fintlock.com"
 EMAIL = "contact@fintlock.com"
-CSS_V = "2"
-JS_V = "2"
+CSS_V = "3"
+JS_V = "3"
 
 ARROW = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 EXT = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3h7v7M13 3 5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
@@ -194,17 +194,17 @@ HOME = f"""
     <section class="hero">
       <div class="wrap">
         <div class="hero-top">
-          <p class="label" data-reveal>Software studio / Tampa, Florida</p>
-          <h1 data-reveal style="--delay:60ms">iPhone apps and business software, made to <em>fit.</em></h1>
+          <p class="label">Software studio / Tampa, Florida</p>
+          <h1>iPhone apps and business software, made to <em>fit.</em></h1>
         </div>
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="lead" data-reveal style="--delay:120ms">Fintlock is a small software studio in Tampa, Florida. We design and build native iPhone apps, desktop tools, and web software for businesses with specific needs, and we help teams put AI and automation to practical use.</p>
-            <div class="actions" data-reveal style="--delay:180ms">
+            <p class="lead">Fintlock is a small software studio in Tampa, Florida. We design and build native iPhone apps, desktop tools, and web software for businesses with specific needs, and we help teams put AI and automation to practical use.</p>
+            <div class="actions">
               <a class="btn btn-primary" href="contact.html">Start a project {ARROW}</a>
               <a class="text-link" href="work.html">See the work {ARROW}</a>
             </div>
-            <div class="hero-meta" data-reveal style="--delay:240ms">
+            <div class="hero-meta">
               <span>Swift and SwiftUI</span>
               <span>Web and desktop</span>
               <span>Direct collaboration</span>
@@ -258,9 +258,9 @@ HOME = f"""
           </div>
           <div class="case-media" data-reveal style="--delay:120ms">
             <div class="screens" aria-label="Fintley screens">
-              <figure><figcaption>Home</figcaption><img src="assets/screens/fintley-home-dark.webp" alt="Fintley home screen with a search field, recent reports, and featured markets" width="720" height="1565" decoding="async" loading="lazy"></figure>
-              <figure><figcaption>Forecast</figcaption><img src="assets/screens/fintley-forecast-dark.webp" alt="Fintley appraisal with a value range, cap rate, rent, cash flow, and Forecast score" width="720" height="1565" decoding="async" loading="lazy"></figure>
-              <figure><figcaption>Deal Lab</figcaption><img src="assets/screens/fintley-deal-lab-dark.webp" alt="Fintley Deal Lab with adjustable assumptions and monthly cash flow" width="720" height="1565" decoding="async" loading="lazy"></figure>
+              <figure><figcaption>Home</figcaption><img src="assets/screens/fintley-home-dark.webp" srcset="assets/screens/fintley-home-dark-480.webp 480w, assets/screens/fintley-home-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley home screen with a search field, recent reports, and featured markets" width="720" height="1565" decoding="async" loading="lazy"></figure>
+              <figure><figcaption>Forecast</figcaption><img src="assets/screens/fintley-forecast-dark.webp" srcset="assets/screens/fintley-forecast-dark-480.webp 480w, assets/screens/fintley-forecast-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley appraisal with a value range, cap rate, rent, cash flow, and Forecast score" width="720" height="1565" decoding="async" loading="lazy"></figure>
+              <figure><figcaption>Deal Lab</figcaption><img src="assets/screens/fintley-deal-lab-dark.webp" srcset="assets/screens/fintley-deal-lab-dark-480.webp 480w, assets/screens/fintley-deal-lab-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley Deal Lab with adjustable assumptions and monthly cash flow" width="720" height="1565" decoding="async" loading="lazy"></figure>
             </div>
           </div>
         </article>
@@ -346,13 +346,13 @@ WORK = f"""
     <section class="page-intro">
       <div class="wrap">
         <div class="page-intro-grid">
-          <div data-reveal>
+          <div>
             <p class="label">Work</p>
             <h1>Two products, start to finish.</h1>
           </div>
-          <p data-reveal style="--delay:100ms">Both were designed and built in-house, from the first sketch to the App Store listing. They are the best public record of how we work.</p>
+          <p>Both were designed and built in-house, from the first sketch to the App Store listing. They are the best public record of how we work.</p>
         </div>
-        <nav class="product-index" aria-label="Products on this page" data-reveal style="--delay:160ms">
+        <nav class="product-index" aria-label="Products on this page">
           <a href="#fintley"><span class="num">01</span><span><strong>Fintley</strong><small>Real estate appraisal for iPhone</small></span>{ARROW}</a>
           <a href="#plants-in-pocket"><span class="num">02</span><span><strong>Plants in Pocket</strong><small>Plant identification and care for iPhone</small></span>{ARROW}</a>
         </nav>
@@ -370,10 +370,10 @@ WORK = f"""
         </div>
 
         <div class="screens screens-4" data-reveal aria-label="Fintley screens">
-          <figure><figcaption>Home</figcaption><img src="assets/screens/fintley-home-dark.webp" alt="Fintley home screen with a search field, recent reports, and featured markets" width="720" height="1565" decoding="async"></figure>
-          <figure><figcaption>Appraisal</figcaption><img src="assets/screens/fintley-forecast-dark.webp" alt="Fintley appraisal with a value range, cap rate, rent, cash flow, and map" width="720" height="1565" decoding="async"></figure>
-          <figure><figcaption>Deal Lab</figcaption><img src="assets/screens/fintley-deal-lab-dark.webp" alt="Fintley Deal Lab with adjustable assumptions and monthly cash flow" width="720" height="1565" decoding="async"></figure>
-          <figure><figcaption>Markets</figcaption><img src="assets/screens/fintley-markets-dark.webp" alt="Fintley markets screen ranking US property markets" width="720" height="1565" decoding="async"></figure>
+          <figure><figcaption>Home</figcaption><img src="assets/screens/fintley-home-dark.webp" srcset="assets/screens/fintley-home-dark-480.webp 480w, assets/screens/fintley-home-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley home screen with a search field, recent reports, and featured markets" width="720" height="1565" decoding="async"></figure>
+          <figure><figcaption>Appraisal</figcaption><img src="assets/screens/fintley-forecast-dark.webp" srcset="assets/screens/fintley-forecast-dark-480.webp 480w, assets/screens/fintley-forecast-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley appraisal with a value range, cap rate, rent, cash flow, and map" width="720" height="1565" decoding="async"></figure>
+          <figure><figcaption>Deal Lab</figcaption><img src="assets/screens/fintley-deal-lab-dark.webp" srcset="assets/screens/fintley-deal-lab-dark-480.webp 480w, assets/screens/fintley-deal-lab-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley Deal Lab with adjustable assumptions and monthly cash flow" width="720" height="1565" decoding="async"></figure>
+          <figure><figcaption>Markets</figcaption><img src="assets/screens/fintley-markets-dark.webp" srcset="assets/screens/fintley-markets-dark-480.webp 480w, assets/screens/fintley-markets-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley markets screen ranking US property markets" width="720" height="1565" decoding="async"></figure>
         </div>
 
         <div class="case" style="border-top:0;padding-bottom:0">
@@ -391,8 +391,8 @@ WORK = f"""
           </div>
           <div class="case-media" data-reveal style="--delay:120ms">
             <div class="screens screens-2" aria-label="More Fintley screens">
-              <figure><figcaption>Watchlist</figcaption><img src="assets/screens/fintley-watchlist-dark.webp" alt="Fintley watchlist with tracked value, projected cash flow, and saved properties" width="720" height="1565" decoding="async" loading="lazy"></figure>
-              <figure><figcaption>Forecast</figcaption><img src="assets/screens/fintley-report-dark.webp" alt="Fintley report with a Forecast score gauge" width="460" height="1000" decoding="async" loading="lazy"></figure>
+              <figure><figcaption>Watchlist</figcaption><img src="assets/screens/fintley-watchlist-dark.webp" srcset="assets/screens/fintley-watchlist-dark-480.webp 480w, assets/screens/fintley-watchlist-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley watchlist with tracked value, projected cash flow, and saved properties" width="720" height="1565" decoding="async" loading="lazy"></figure>
+              <figure><figcaption>Forecast</figcaption><img src="assets/screens/fintley-report-dark.webp" srcset="assets/screens/fintley-report-dark-320.webp 320w, assets/screens/fintley-report-dark.webp 460w" sizes="(max-width: 640px) 62vw, 25vw" alt="Fintley report with a Forecast score gauge" width="460" height="1000" decoding="async" loading="lazy"></figure>
             </div>
           </div>
         </div>
@@ -464,11 +464,11 @@ def faq_html():
 SERVICES_PAGE = f"""
     <section class="page-intro">
       <div class="wrap page-intro-grid">
-        <div data-reveal>
+        <div>
           <p class="label">Services</p>
           <h1>What we build, and how.</h1>
         </div>
-        <p data-reveal style="--delay:100ms">We work directly with owners and teams to fit software to the way a company already runs. Four kinds of work, all done in-house.</p>
+        <p>We work directly with owners and teams to fit software to the way a company already runs. Four kinds of work, all done in-house.</p>
       </div>
     </section>
 
@@ -530,11 +530,11 @@ SERVICES_PAGE = f"""
 CONTACT = f"""
     <section class="page-intro">
       <div class="wrap page-intro-grid">
-        <div data-reveal>
+        <div>
           <p class="label">Contact</p>
           <h1>Tell us what needs to work better.</h1>
         </div>
-        <p data-reveal style="--delay:100ms">A few sentences about the problem, the people involved, and what you would like to change is enough to start. No brief or deck required.</p>
+        <p>A few sentences about the problem, the people involved, and what you would like to change is enough to start. No brief or deck required.</p>
       </div>
     </section>
 
@@ -599,11 +599,11 @@ CONTACT = f"""
 PRIVACY = f"""
     <section class="page-intro">
       <div class="wrap page-intro-grid">
-        <div data-reveal>
+        <div>
           <p class="label">Privacy</p>
           <h1>Plain terms, minimal collection.</h1>
         </div>
-        <p data-reveal style="--delay:100ms">This notice covers fintlock.com. Individual Fintlock products may publish their own privacy information for the data those products require.</p>
+        <p>This notice covers fintlock.com. Individual Fintlock products may publish their own privacy information for the data those products require.</p>
       </div>
     </section>
 
