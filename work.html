@@ -20,7 +20,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap"></noscript>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"SoftwareApplication","name":"Fintley","url":"https://fintley.app","applicationCategory":"FinanceApplication","operatingSystem":"iOS","description":"Real estate appraisal for iPhone. Type an address and get an estimated value, rent, cash flow, comparable sales, and a Forecast score.","author":{"@id":"https://fintlock.com/#org"}},
@@ -48,13 +48,13 @@
     <section class="page-intro">
       <div class="wrap">
         <div class="page-intro-grid">
-          <div data-reveal>
+          <div>
             <p class="label">Work</p>
             <h1>Two products, start to finish.</h1>
           </div>
-          <p data-reveal style="--delay:100ms">Both were designed and built in-house, from the first sketch to the App Store listing. They are the best public record of how we work.</p>
+          <p>Both were designed and built in-house, from the first sketch to the App Store listing. They are the best public record of how we work.</p>
         </div>
-        <nav class="product-index" aria-label="Products on this page" data-reveal style="--delay:160ms">
+        <nav class="product-index" aria-label="Products on this page">
           <a href="#fintley"><span class="num">01</span><span><strong>Fintley</strong><small>Real estate appraisal for iPhone</small></span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a href="#plants-in-pocket"><span class="num">02</span><span><strong>Plants in Pocket</strong><small>Plant identification and care for iPhone</small></span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </nav>
@@ -72,10 +72,10 @@
         </div>
 
         <div class="screens screens-4" data-reveal aria-label="Fintley screens">
-          <figure><figcaption>Home</figcaption><img src="assets/screens/fintley-home-dark.webp" alt="Fintley home screen with a search field, recent reports, and featured markets" width="720" height="1565" decoding="async"></figure>
-          <figure><figcaption>Appraisal</figcaption><img src="assets/screens/fintley-forecast-dark.webp" alt="Fintley appraisal with a value range, cap rate, rent, cash flow, and map" width="720" height="1565" decoding="async"></figure>
-          <figure><figcaption>Deal Lab</figcaption><img src="assets/screens/fintley-deal-lab-dark.webp" alt="Fintley Deal Lab with adjustable assumptions and monthly cash flow" width="720" height="1565" decoding="async"></figure>
-          <figure><figcaption>Markets</figcaption><img src="assets/screens/fintley-markets-dark.webp" alt="Fintley markets screen ranking US property markets" width="720" height="1565" decoding="async"></figure>
+          <figure><figcaption>Home</figcaption><img src="assets/screens/fintley-home-dark.webp" srcset="assets/screens/fintley-home-dark-480.webp 480w, assets/screens/fintley-home-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley home screen with a search field, recent reports, and featured markets" width="720" height="1565" decoding="async"></figure>
+          <figure><figcaption>Appraisal</figcaption><img src="assets/screens/fintley-forecast-dark.webp" srcset="assets/screens/fintley-forecast-dark-480.webp 480w, assets/screens/fintley-forecast-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley appraisal with a value range, cap rate, rent, cash flow, and map" width="720" height="1565" decoding="async"></figure>
+          <figure><figcaption>Deal Lab</figcaption><img src="assets/screens/fintley-deal-lab-dark.webp" srcset="assets/screens/fintley-deal-lab-dark-480.webp 480w, assets/screens/fintley-deal-lab-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley Deal Lab with adjustable assumptions and monthly cash flow" width="720" height="1565" decoding="async"></figure>
+          <figure><figcaption>Markets</figcaption><img src="assets/screens/fintley-markets-dark.webp" srcset="assets/screens/fintley-markets-dark-480.webp 480w, assets/screens/fintley-markets-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley markets screen ranking US property markets" width="720" height="1565" decoding="async"></figure>
         </div>
 
         <div class="case" style="border-top:0;padding-bottom:0">
@@ -93,8 +93,8 @@
           </div>
           <div class="case-media" data-reveal style="--delay:120ms">
             <div class="screens screens-2" aria-label="More Fintley screens">
-              <figure><figcaption>Watchlist</figcaption><img src="assets/screens/fintley-watchlist-dark.webp" alt="Fintley watchlist with tracked value, projected cash flow, and saved properties" width="720" height="1565" decoding="async" loading="lazy"></figure>
-              <figure><figcaption>Forecast</figcaption><img src="assets/screens/fintley-report-dark.webp" alt="Fintley report with a Forecast score gauge" width="460" height="1000" decoding="async" loading="lazy"></figure>
+              <figure><figcaption>Watchlist</figcaption><img src="assets/screens/fintley-watchlist-dark.webp" srcset="assets/screens/fintley-watchlist-dark-480.webp 480w, assets/screens/fintley-watchlist-dark.webp 720w" sizes="(max-width: 640px) 62vw, 30vw" alt="Fintley watchlist with tracked value, projected cash flow, and saved properties" width="720" height="1565" decoding="async" loading="lazy"></figure>
+              <figure><figcaption>Forecast</figcaption><img src="assets/screens/fintley-report-dark.webp" srcset="assets/screens/fintley-report-dark-320.webp 320w, assets/screens/fintley-report-dark.webp 460w" sizes="(max-width: 640px) 62vw, 25vw" alt="Fintley report with a Forecast score gauge" width="460" height="1000" decoding="async" loading="lazy"></figure>
             </div>
           </div>
         </div>
@@ -175,6 +175,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=2" defer></script>
+  <script src="app.js?v=3" defer></script>
 </body>
 </html>
