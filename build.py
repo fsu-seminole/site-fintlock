@@ -9,6 +9,7 @@ from service_pages import PAGES as SERVICE_PAGES
 ROOT = pathlib.Path(__file__).parent
 SITE = "https://fintlock.com"
 EMAIL = "contact@fintlock.com"
+PLANTS_APP_STORE = "https://apps.apple.com/us/app/plants-in-pocket-plant-id/id6790838495"
 CSS_V = "4"
 JS_V = "3"
 
@@ -282,11 +283,11 @@ HOME = f"""
             <dl class="facts">
               <div><dt>Platform</dt><dd>iPhone</dd></div>
               <div><dt>Category</dt><dd>Plant care</dd></div>
-              <div><dt>Status</dt><dd>Launching 2026</dd></div>
+              <div><dt>Status</dt><dd>Available now</dd></div>
             </dl>
             <div class="actions">
               <a class="text-link" href="work.html#plants-in-pocket">More about Plants in Pocket {ARROW}</a>
-              <a class="text-link" href="https://www.tiktok.com/@plantsinpocket" rel="noopener">@plantsinpocket {EXT}</a>
+              <a class="text-link" href="{PLANTS_APP_STORE}" rel="noopener">View on the App Store {EXT}</a>
             </div>
           </div>
           <div class="case-media" data-reveal style="--delay:120ms">
@@ -431,9 +432,10 @@ WORK = f"""
             <dl class="facts">
               <div><dt>Platform</dt><dd>iPhone</dd></div>
               <div><dt>Category</dt><dd>Plant care</dd></div>
-              <div><dt>Status</dt><dd>Launching 2026</dd></div>
+              <div><dt>Status</dt><dd>Available now</dd></div>
             </dl>
             <div class="actions">
+              <a class="btn btn-primary" href="{PLANTS_APP_STORE}" rel="noopener">View on the App Store {EXT}</a>
               <a class="btn btn-ghost" href="https://www.tiktok.com/@plantsinpocket" rel="noopener">Follow @plantsinpocket {EXT}</a>
             </div>
           </div>
@@ -677,6 +679,9 @@ def service_page(p):
         f'<a href="{s}"><span class="num">0{i+1}</span><span><strong>{by_slug[s]["label"]}</strong><small>{by_slug[s]["blurb"]}</small></span>{ARROW}</a>'
         for i, s in enumerate(p["related"]))
     ex_href, ex_text = p["example"][4]
+    ex_external = ex_href.startswith("http")
+    ex_rel = ' rel="noopener"' if ex_external else ""
+    ex_icon = EXT if ex_external else ARROW
     return f"""
     <section class="page-intro">
       <div class="wrap page-intro-grid">
@@ -723,7 +728,7 @@ def service_page(p):
           <h2 style="font-size:clamp(2rem,3.6vw,3.2rem)">{p["example"][1]}</h2>
           {"".join(f'<p{" class=lead" if i == 0 else ""}>{x}</p>' for i, x in enumerate(p["example"][2]))}
           <dl class="facts">{facts}</dl>
-          <div class="actions"><a class="text-link" href="{ex_href}">{ex_text} {ARROW}</a></div>
+          <div class="actions"><a class="text-link" href="{ex_href}"{ex_rel}>{ex_text} {ex_icon}</a></div>
         </div>
         <div class="case-media" data-reveal style="--delay:120ms">
           {example_media(p["slug"])}
@@ -828,7 +833,7 @@ JSONLD = """  <script type="application/ld+json">
 WORK_JSONLD = """  <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"SoftwareApplication","name":"Fintley","url":"https://fintley.app","applicationCategory":"FinanceApplication","operatingSystem":"iOS","description":"Real estate appraisal for iPhone. Type an address and get an estimated value, rent, cash flow, comparable sales, and a Forecast score.","author":{"@id":"https://fintlock.com/#org"}},
-    {"@type":"SoftwareApplication","name":"Plants in Pocket","applicationCategory":"LifestyleApplication","operatingSystem":"iOS","description":"Plant identification, health checks, and care plans for iPhone.","author":{"@id":"https://fintlock.com/#org"},"sameAs":["https://www.tiktok.com/@plantsinpocket"]}
+    {"@type":"SoftwareApplication","name":"Plants in Pocket","url":"https://apps.apple.com/us/app/plants-in-pocket-plant-id/id6790838495","downloadUrl":"https://apps.apple.com/us/app/plants-in-pocket-plant-id/id6790838495","applicationCategory":"LifestyleApplication","operatingSystem":"iOS","description":"Plant identification, health checks, and care plans for iPhone.","author":{"@id":"https://fintlock.com/#org"},"sameAs":["https://apps.apple.com/us/app/plants-in-pocket-plant-id/id6790838495","https://www.tiktok.com/@plantsinpocket"]}
   ]}
   </script>
 """
@@ -862,7 +867,7 @@ for path in PAGES:
     if path == "404.html":
         continue
     loc = SITE + "/" + (path if path != "index.html" else "")
-    sitemap.append(f"  <url><loc>{loc}</loc><lastmod>2026-09-02</lastmod></url>")
+    sitemap.append(f"  <url><loc>{loc}</loc><lastmod>2026-09-10</lastmod></url>")
 sitemap.append("</urlset>\n")
 (ROOT / "sitemap.xml").write_text("\n".join(sitemap), encoding="utf-8")
 print("wrote sitemap.xml")

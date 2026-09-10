@@ -155,8 +155,8 @@ PAGES = [
         "example": ("Project example / Plants in Pocket", "Identify a plant, then keep it alive.",
             ["Plants in Pocket is our own consumer app for iPhone. Identify a plant, check its health, and follow a care plan written for that plant. Most plant apps stop at the name; this one goes on to the part that matters: what should I do this week?",
              "It shows the full arc of a custom app project: an idea, a focused feature set, interface design, native development, and an App Store launch, all done by one small team."],
-            [("Platform", "iPhone"), ("Category", "Plant care"), ("Status", "Launching 2026")],
-            ("work.html#plants-in-pocket", "See Plants in Pocket")),
+            [("Platform", "iPhone"), ("Category", "Plant care"), ("Status", "Available now")],
+            ("https://apps.apple.com/us/app/plants-in-pocket-plant-id/id6790838495", "View on the App Store")),
         "faq": [
             ("iPhone app or web app: which should we build?", "If the app needs the camera, offline use, notifications, or a place on someone's home screen, native iPhone. If it needs to run on any device with nothing to install, the browser. Many products need both, sharing one backend, and we build those too."),
             ("How do you price a project?", "Against a written scope. After the first conversation we send a scope and a price. The price holds unless the scope changes, and you decide when it does."),
