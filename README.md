@@ -25,7 +25,7 @@ python3 build.py
 ## Features
 
 - **Light / navy switch** in the nav. Remembered per visitor; applied before first paint to avoid a flash.
-- **Live App Store details** for Plants in Pocket (version, last update, price, and rating once it has 10+ ratings), fetched from Apple's public lookup API and cached for 6 hours.
+- **Live App Store details** for Plants in Pocket (version, last update, price, star rating and number of ratings), fetched from Apple's public lookup API and cached for 6 hours.
 - **Contact form** posts to FormSubmit (`formsubmit.co`) and lands in contact@fintlock.com. Each note includes the page the visitor came from. If sending fails, the visitor gets a prepared email instead.
 - **Version stamp** in every footer (`vYYYY.MM.DD-hash`), also in `<meta name="fintlock-version">` and `version.json`. The hash comes from the build inputs, so it changes whenever the site does.
 - **404 lock game** at any missing URL, with a best time saved in the browser.

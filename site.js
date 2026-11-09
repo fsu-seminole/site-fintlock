@@ -85,7 +85,7 @@
       var bits = ['<span class="dot">Live on the App Store</span>', "<span>Version " + r.version + "</span>"];
       if (!isNaN(updated)) bits.push("<span>Updated " + updated.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) + "</span>");
       if (r.formattedPrice) bits.push("<span>" + r.formattedPrice + "</span>");
-      if (r.userRatingCount >= 10) bits.push("<span>★ " + r.averageUserRating.toFixed(1) + " (" + r.userRatingCount + " ratings)</span>");
+      if (r.userRatingCount >= 1) bits.splice(1, 0, "<span>★ " + Number(r.averageUserRating).toFixed(1) + " (" + r.userRatingCount + (r.userRatingCount === 1 ? " rating" : " ratings") + ")</span>");
       appEls.forEach(function (el) { el.innerHTML = bits.join(""); el.hidden = false; });
     };
     if (cached && Date.now() - cached.t < 6 * 3600 * 1000) render(cached.r);
