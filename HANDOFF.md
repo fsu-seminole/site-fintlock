@@ -1,5 +1,8 @@
 # Fintlock production handoff
 
+**Redesign:** November 8, 2026. Soft studio design (light default, navy option), TV SmartHub service page, contact form, live App Store details, version stamps, 404 game. See README.md for how to build.
+
+
 **Owner approval date:** July 28, 2026
 
 **Production homepage:** `index.html`
@@ -29,9 +32,9 @@ upload the private design workspace or reintroduce `index-test.html` as a public
 | File | Purpose |
 | --- | --- |
 | `index.html` | Owner-approved production homepage. |
-| `homepage.css` | Homepage-specific approved styling. |
-| `styles.css` | Shared site styles. |
-| `app.js` | Shared navigation, motion, footer, and contact behavior. |
+| `site.css` | Design system for every page. |
+| `site.js` | Theme switch, menu, contact form, live App Store details, 404 game. |
+| `build.py` | Generates every page. Run `python3 build.py` after editing. |
 | `work.html` | Plants in Pocket and Fintley. |
 | `services.html` | Software and technology-integration services. |
 | `contact.html` | Direct email contact page without form fields. |
@@ -43,7 +46,8 @@ upload the private design workspace or reintroduce `index-test.html` as a public
 
 ## Release checks
 
-- Keep the public portfolio limited to Plants in Pocket and Fintley until the owner requests otherwise.
+- Public portfolio: Plants in Pocket (flagship), the TV SmartHub client install, and Fintley (in development).
+- After the first deploy, send one test message through the contact form and confirm FormSubmit's activation email sent to contact@fintlock.com.
 - Verify the homepage at desktop and mobile sizes.
 - Verify Work, Services, Contact, and Privacy navigation.
 - Verify product images, wordmarks, favicon, and social-card assets.
